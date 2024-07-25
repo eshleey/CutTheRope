@@ -6,6 +6,7 @@ public class RopeManager : MonoBehaviour
     public Ball Ball;
     public int ConnectionCount = 5;
     public GameObject[] ConnectionPool;
+    public string HingeName;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class RopeManager : MonoBehaviour
             }
             else
             {
-                Ball.TieLastChain(ConnectionPool[i].GetComponent<Rigidbody2D>());
+                Ball.TieLastChain(ConnectionPool[i].GetComponent<Rigidbody2D>(), HingeName);
             }
         }
     }
