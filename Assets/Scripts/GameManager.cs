@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Ball Ball;
+    [SerializeField] Ball[] Ball;
 
     void Update()
     {
@@ -14,15 +14,27 @@ public class GameManager : MonoBehaviour
             {
                 if (Hit.collider.CompareTag("Center 1"))
                 {
-                    Hit.collider.gameObject.SetActive(false);
-                    Ball.HingeControl["Center 1"].enabled = false;
+                    ChainTechnicalProcess(Hit, "Center 1", 0);
                 }
                 else if (Hit.collider.CompareTag("Center 2"))
                 {
-                    Hit.collider.gameObject.SetActive(false);
-                    Ball.HingeControl["Center 2"].enabled = false;
+                    ChainTechnicalProcess(Hit, "Center 2", 0);
+                }
+                else if (Hit.collider.CompareTag("Center 3"))
+                {
+                    ChainTechnicalProcess(Hit, "Center 3", 1);
+                }
+                else if (Hit.collider.CompareTag("Center 4"))
+                {
+                    ChainTechnicalProcess(Hit, "Center 4", 1);
                 }
             }
         }
+    }
+
+    void ChainTechnicalProcess(RaycastHit2D Hit, string HingeName, int BallCount)
+    {
+        Hit.collider.gameObject.SetActive(false);
+        Ball[BallCount].HingeControl[HingeName].enabled = false;
     }
 }
