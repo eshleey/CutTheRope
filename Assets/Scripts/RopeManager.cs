@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class RopeManager : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D FirstHook;
-    [SerializeField] Ball Ball;
-    [SerializeField] int ConnectionCount = 5;
-    [SerializeField] GameObject[] ConnectionPool;
-    [SerializeField] string HingeName;
+    [SerializeField] private Rigidbody2D FirstHook;
+    [SerializeField] private Ball Ball;
+    [SerializeField] private int ConnectionCount = 5;
+    [SerializeField] private GameObject[] ConnectionPool;
+    [SerializeField] private string HingeName;
 
     void Start()
     {

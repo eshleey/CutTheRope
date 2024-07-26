@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Ball[] Ball;
+    [SerializeField] private Ball[] Ball;
+    [SerializeField] private int BallCount;
+    [SerializeField] private int TargetObjectCount;
 
     void Update()
     {
@@ -36,5 +38,41 @@ public class GameManager : MonoBehaviour
     {
         Hit.collider.gameObject.SetActive(false);
         Ball[BallCount].HingeControl[HingeName].enabled = false;
+    }
+
+    public void BallFell()
+    {
+        BallCount--;
+        if (BallCount == 0)
+        {
+            if (TargetObjectCount == 0)
+            {
+                Debug.Log("KAZANDIN");
+            }
+            else if (TargetObjectCount > 0)
+            {
+                Debug.Log("KAYBETTÝN");
+            }
+        }
+        else
+        {
+            if (TargetObjectCount == 0)
+            {
+                Debug.Log("KAZANDIN");
+            }
+        }
+    }
+
+    public void TargetObjectFell()
+    {
+        TargetObjectCount--;
+        if (BallCount == 0 && TargetObjectCount == 0)
+        {
+            Debug.Log("KAZANDIN");
+        }
+        else if (BallCount == 0 && TargetObjectCount > 0)
+        {
+            Debug.Log("KAYBETTÝN");
+        }
     }
 }
