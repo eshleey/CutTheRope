@@ -20,16 +20,16 @@ public class GameManager : MonoBehaviour
                 }
                 else if (Hit.collider.CompareTag("Center 2"))
                 {
-                    ChainTechnicalProcess(Hit, "Center 2", 0);
+                    ChainTechnicalProcess(Hit, "Center 2", 1);
                 }
-                else if (Hit.collider.CompareTag("Center 3"))
+                /*else if (Hit.collider.CompareTag("Center 3"))
                 {
-                    ChainTechnicalProcess(Hit, "Center 3", 1);
+                    ChainTechnicalProcess(Hit, "Center 3", 2);
                 }
                 else if (Hit.collider.CompareTag("Center 4"))
                 {
-                    ChainTechnicalProcess(Hit, "Center 4", 1);
-                }
+                    ChainTechnicalProcess(Hit, "Center 4", 3);
+                }*/
             }
         }
     }
